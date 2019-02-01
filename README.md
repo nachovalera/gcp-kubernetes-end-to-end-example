@@ -27,7 +27,7 @@ kubectl apply -f lb-service.yaml
 
 ## Get info and LB ip
 ```bash
-kubectl describe service end-to-end-example-LB
+kubectl describe service end-to-end-example-lb
 ```
 Then check the ip in a browser. It should say 'Hello World'
 

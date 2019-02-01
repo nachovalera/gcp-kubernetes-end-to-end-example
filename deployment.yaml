@@ -5,7 +5,7 @@ metadata:
   labels:
     app: end-to-end-example
 spec:
-  replicas: 3 # tells deployment to run 2 pods matching the template
+  replicas: 3 # tells deployment to run 3 pods matching the template
   selector:
     matchLabels:
       app: end-to-end-example
