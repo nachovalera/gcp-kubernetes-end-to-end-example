@@ -1,0 +1,23 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: end-to-end-example
+  labels:
+    app: end-to-end-example
+spec:
+  replicas: 3 # tells deployment to run 2 pods matching the template
+  selector:
+    matchLabels:
+      app: end-to-end-example
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        app: end-to-end-example
+    spec:
+      containers:
+      - name: end-to-end-example
+        image: gcr.io/proyect-name/kubernetes-end-to-end-example:latest
+        ports:
+        - containerPort: 80
